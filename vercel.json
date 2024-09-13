@@ -10,4 +10,11 @@
         }
     ],
     "buildCommand": "gunicorn baoiamweb.wsgi:application --log-file -"
+, "routes": [
+     
+      {
+        "src": "(.*)",
+        "dest": "baoiamweb/wsgi.py"
+      }
+]
 }
