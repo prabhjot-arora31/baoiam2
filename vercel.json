@@ -9,12 +9,13 @@
             }
         }
     ],
-    "buildCommand": "gunicorn baoiamweb.wsgi:application --log-file -"
-, "routes": [
-     
-      {
-        "src": "(.*)",
-        "dest": "baoiamweb/wsgi.py"
-      }
-]
+    "buildCommand": "python manage.py migrate && python manage.py collectstatic --noinput",
+    "installCommand": "pip install -r requirements.txt",
+    "start": "gunicorn baoiamweb.wsgi:application --log-file -",
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "baoiamweb/wsgi.py"
+        }
+    ]
 }
