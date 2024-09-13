@@ -25,14 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'api.baoiam.com',
+    'baoiam-server.vercel.app',
     'baoiam.vercel.app', 
+    'baoiam2.vercel.app',
     'baoiam.com',
     'www.baoiam.com',
-    'baoiam2.vercel.app',
     'localhost',
     '127.0.0.1',
 ]
@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     "social_django.middleware.SocialAuthExceptionMiddleware",
     'django.middleware.common.CommonMiddleware',
-       'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -110,11 +110,7 @@ DATABASES = {
         #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION'",
         # },
     },
-
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',  
-    # }
+    
    
 }
 
@@ -286,7 +282,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True   
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')       
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  
 
 # AWS bucket configuration
@@ -308,7 +304,6 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
 
 # JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
-
 # Razorpay
 RAZORPAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID")
 RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET")
