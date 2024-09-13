@@ -39,4 +39,5 @@ google-auth==2.19.1
 google-auth-oauthlib==0.8.0
 google-api-python-client==2.85.0
 whitenoise==6.5.0
+psycopg
 psycopg2-binary==2.9.6
