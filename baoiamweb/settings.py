@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     'baoiam.vercel.app', 
     'baoiam.com',
     'www.baoiam.com',
+    'baoiam2.vercel.app',
     'localhost',
     '127.0.0.1',
 ]
