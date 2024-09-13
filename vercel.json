@@ -1,20 +1,13 @@
 {
     "version": 2,
     "builds": [
-    {
-      "src": "baoiamweb/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.12"
-      }
-    }
-  ],
-  "buildCommand": "python manage.py runserver",
-    "routes": [
-     
-      {
-        "src": "(.*)",
-        "dest": "baoiamweb/wsgi.py"
-      }
-    ]
-  }
+        {
+            "src": "baoiamweb/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "runtime": "python3.9"
+            }
+        }
+    ],
+    "buildCommand": "gunicorn baoiamweb.wsgi:application --log-file -"
+}
