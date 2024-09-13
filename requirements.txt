@@ -34,3 +34,5 @@ sqlparse==0.5.1
 tzdata==2024.1
 urllib3==2.2.2
 whitenoise
+psycopg
+psycopg2
