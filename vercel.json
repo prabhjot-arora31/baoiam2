@@ -1,6 +1,6 @@
 {
-    "version": 2,
-    "builds": [
+  "version": 2,
+  "builds": [
     {
       "src": "baoiamweb/wsgi.py",
       "use": "@vercel/python",
@@ -9,15 +9,15 @@
       }
     }
   ],
-  "buildCommand": "python manage.py migrate && python manage.py collectstatic --noinput ",
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/staticfiles/$1"
-      },
-      {
-        "src": "(.*)",
-        "dest": "baoiamweb/wsgi.py"
-      }
-    ]
-  }
+  "buildCommand": "python manage.py migrate && python manage.py collectstatic --noinput",
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "(.*)",
+      "dest": "baoiamweb/wsgi.py"
+    }
+  ]
+}
